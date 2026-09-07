@@ -836,7 +836,18 @@ main {
 
 .skills-title { margin-bottom: 20px; }
 
-.skills-list { padding: 20px; }
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 24px;
+  padding: 20px;
+}
+
+.skills-item {
+  min-width: 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--jet);
+}
 
 .skill-values {
   color: var(--light-gray);
@@ -847,7 +858,7 @@ main {
 }
 
 
-.skills-item:not(:last-child) { margin-bottom: 15px; }
+.skill .title-wrapper { margin-bottom: 6px; }
 
 .skill .title-wrapper {
   display: flex;
@@ -1269,6 +1280,8 @@ textarea.form-input::-webkit-resizer { display: none; }
  */
 
 @media (min-width: 580px) {
+
+  .skills-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   /**
    * CUSTOM PROPERTY
