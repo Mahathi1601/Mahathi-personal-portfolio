@@ -839,18 +839,25 @@ main {
 .skills-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px 24px;
+  gap: 0;
   padding: 20px;
 }
 
 .skills-item {
   min-width: 0;
-  padding-bottom: 14px;
+  padding: 20px;
   border-bottom: 1px solid var(--jet);
+  border-right: 0;
+}
+
+.skills-item .h5 {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
 }
 
 .skill-values {
-  color: var(--light-gray);
+  color: var(--white-2);
   font-size: var(--fs-7);
   font-weight: var(--fw-300);
   line-height: 1.6;
@@ -1282,6 +1289,15 @@ textarea.form-input::-webkit-resizer { display: none; }
 @media (min-width: 580px) {
 
   .skills-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .skills-item {
+    min-height: 130px;
+    border-right: 1px solid var(--jet);
+  }
+
+  .skills-item:nth-child(2n) { border-right: 0; }
+
+  .skills-item:nth-last-child(-n + 2) { border-bottom: 0; }
 
   /**
    * CUSTOM PROPERTY
